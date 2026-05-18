@@ -1,0 +1,22 @@
+<header
+  class="flex w-full items-center justify-between gap-3 border-b border-[var(--app-border)] bg-[var(--app-bg)] p-4 text-[var(--app-text)]"
+>
+  <div
+    class="flex items-center flex-1 w-full max-w-100 gap-2 rounded-md border border-[var(--app-border)] bg-[var(--app-surface)] p-2"
+  >
+    <i data-lucide="search" class="size-5 text-[var(--app-text-muted)]"></i>
+    <input
+      class="w-full focus-visible:outline-none focus-visible:border-none rounded-md bg-[var(--app-surface)] text-lg text-[var(--app-text)] placeholder:text-[var(--app-text-muted)]"
+      placeholder="Search the site..."
+    />
+  </div>
+  <button
+    id="theme-toggle"
+    class="rounded p-2 cursor-pointer text-[var(--app-text-muted)] hover:bg-[var(--app-surface-muted)] hover:text-[var(--app-text)]"
+    type="button"
+    aria-label="Toggle dark mode"
+  >
+    <i data-lucide="moon" class="h-4 w-4 dark:hidden"></i>
+    <i data-lucide="sun" class="hidden h-4 w-4 dark:block"></i>
+  </button>
+</header>

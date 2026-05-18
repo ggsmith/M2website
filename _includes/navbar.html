@@ -1,29 +1,36 @@
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-	<a class="navbar-brand" href="{{ site.baseurl }}/">
-	  <img src="{{ site.baseurl }}/static/syzygy.jpg"
-	       title="M2 Syzygy, by Courtney Gibbons" style="width:35px; margin-right: 5px"/>
-	  <strong>{{ site.title }}</strong></a>
+<nav
+  class="mx-auto flex max-w-[1800px] flex-wrap items-center gap-3 rounded bg-[#000100] px-3 py-1 font-mono text-white"
+>
+  <a
+    class="flex items-center gap-2 text-white no-underline hover:text-white hover:no-underline"
+    href="{{ site.baseurl }}/"
+  >
+    <img
+      class="mb-0 w-[35px] rounded"
+      src="{{ site.baseurl }}/static/syzygy.jpg"
+      title="M2 Syzygy, by Courtney Gibbons"
+      alt=""
+    />
+    <strong>{{ site.title }}</strong>
+  </a>
 
-	<div class="collapse navbar-collapse" id="navb">
-	  <ul class="navbar-nav mr-auto">
-	    {%- assign pages_list = site.pages | sort: 'order' -%}
-	    {%- for node in pages_list -%}
-	      {%- if node.title != null and node.category == "links" -%}
-	    <li class="nav-item">
-              <a class="nav-link
-	      {%- if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
-	    </li>
-	      {%- endif -%}
-	    {%- endfor %}
-	    <li class="nav-item">
-              <a class="nav-link" href="https://github.com/Macaulay2/M2/wiki">Wiki</a>
-	    </li>
-	  </ul>
-	</div>
-
-	<button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navb">
-	  <span class="navbar-toggler-icon"></span>
-	</button>
-      </div>
-    </nav>
+  <ul class="m-0 flex list-none flex-wrap items-center gap-1 p-0">
+    {%- assign pages_list = site.pages | sort: 'order' -%} {%- for node in
+    pages_list -%} {%- if node.title != null and node.category == "links" -%}
+    <li>
+      <a
+        class="block rounded px-2 py-1 text-sm no-underline hover:bg-white/10 hover:text-white hover:no-underline{% if page.url == node.url %} bg-white/15 text-white{% else %} text-white/80{% endif %}"
+        href="{{ site.baseurl }}{{ node.url }}"
+        >{{ node.title }}</a
+      >
+    </li>
+    {%- endif -%} {%- endfor %}
+    <li>
+      <a
+        class="block rounded px-2 py-1 text-sm text-white/80 no-underline hover:bg-white/10 hover:text-white hover:no-underline"
+        href="https://github.com/Macaulay2/M2/wiki"
+        >Wiki</a
+      >
+    </li>
+  </ul>
+</nav>

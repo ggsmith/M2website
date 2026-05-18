@@ -1,0 +1,19 @@
+:root {
+  --app-bg: #ffffff;
+  --app-surface: #f8fafc;
+  --app-surface-muted: #e2e8f0;
+  --app-border: #cbd5e1;
+  --app-text: #0f172a;
+  --app-text-muted: #64748b;
+  --app-link: #375eab;
+}
+
+.dark {
+  --app-bg: #020617;
+  --app-surface: #0f172a;
+  --app-surface-muted: #1e293b;
+  --app-border: #334155;
+  --app-text: #f8fafc;
+  --app-text-muted: #94a3b8;
+  --app-link: #93c5fd;
+}

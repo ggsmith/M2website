@@ -48,10 +48,10 @@ And here are slightly fancier bindings which are nevertheless quite useful.
 
 For many more key bindings and notation, see this [reference card](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf).
 
-<div class="row">
+<div class="grid grid-cols-2 gap-4 md:grid-cols-4">
 {%- for i in (0..3) -%}
 {%- assign screenshot = site.baseurl | append: "/static/emacs" | append: i | append: ".png" -%}
- <div class="col-3 feature">
+ <div class="feature">
   [![]({{ screenshot }}){:.feature}]({{ screenshot }})
  </div>
 {%- endfor -%}

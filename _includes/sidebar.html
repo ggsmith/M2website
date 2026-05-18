@@ -1,76 +1,30 @@
-<div class="sidebar-container">
-  <aside id="sidebar-quicklinks" class="sidebar">
-    <!--
-	  <button type="button" class="button action backdrop" aria-label="Collapse sidebar">
-			<span class="button-wrap"></span>
-	  </button>
-	  -->
-    <nav class="sidebar-inner">
-      <div class="sidebar-inner-nav">
-        <div class="in-nav-outline">
-          <div class="outline-container">
-            <section class="outline-section">
-              <!-- <header> -->
-              <!--   <h5 class="outline-heading">Page Outline</h5> -->
-	      <!-- </header> -->
-              <details id="outline-list">
-                <summary><span class="place side">Page Outline</summary>
-		<ul class="outline-list">
-                  <!-- <li class="outline-item">
-                       <a class="outline-link" href="/url#hash">text</a>
-                  </li> -->
-		</ul>
-	      </details>
-            </section>
-          </div>
-        </div>
-
-        <div class="sidebar-body">
-          <!-- <header> -->
-          <!--   <h5 class="index-heading">Package Index</h5> -->
-          <!-- </header> -->
-          <details open>
-            <summary><span class="place side">Package Contents</summary>
-            <ol class="index-list">
-              <!-- <li class="index-item section">
-		   <em>
-                     <a href="/url" aria-current="page">text</a>
-		   </em>
-              </li>
-              <li class="index-item toggle">
-		<details open="">
-                  <summary>Properties</summary>
-                  <ol>
-                    <li class="index-item">
-                      <a href="/url"><code>text<code></a>
-                    </li>
-                  </ol>
-		</details>
-              </li> -->
-            </ol>
-	  </details>
-        </div>
+<div class="flex h-full w-80 flex-col gap-2 border-r border-[var(--app-border)] bg-[var(--app-bg)] p-5 text-[var(--app-text)]">
+  <a href="/LearnM2/">
+    <div class="flex items-center gap-2">
+      <div class="flex items-center justify-center rounded-md bg-[var(--app-surface-muted)] p-2">
+        <span class="text-5xl font-bold">M2</span>
       </div>
-    </nav>
-  </aside>
+      <span class="text-4xl font-medium text-[var(--app-text)]">Macaulay2</span>
+    </div>
+  </a>
 
-  <div class="outline-container">
-    <aside class="outline">
-      <nav>
-        <div class="outline-container">
-          <section class="outline-section">
-            <!-- <header> -->
-            <!--   <h5 class="outline-heading">Page Outline</h5> -->
-            <!-- </header> -->
-            <span class="place side">Page Outline</span>
-            <ul class="outline-list">
-              <!-- <li class="outline-item">
-                <a class="outline-link" href="/url#hash">text</a>
-              </li> -->
-            </ul>
-          </section>
-        </div>
-      </nav>
-    </aside>
-  </div>
+  <ul class="m-0 flex flex-col gap-1 p-0">
+    {%- assign pages_list = site.pages | sort: 'order' -%} {%- for node in
+    pages_list -%} {%- if node.title != null and node.category == "links" -%}
+    <li>
+      <a
+        class="block rounded px-2 py-1 text-lg text-[var(--app-text)] transition-all duration-200 hover:bg-[var(--app-surface-muted)]"
+        href="{{ site.baseurl }}{{ node.url }}"
+        >{{ node.title }}</a
+      >
+    </li>
+    {%- endif -%} {%- endfor %}
+    <li>
+      <a
+        class="block rounded px-2 py-1 text-lg text-[var(--app-text)] transition-all duration-200 hover:bg-[var(--app-surface-muted)]"
+        href="https://github.com/Macaulay2/M2/wiki"
+        >Wiki</a
+      >
+    </li>
+  </ul>
 </div>

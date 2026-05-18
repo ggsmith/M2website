@@ -5,22 +5,22 @@ title: Search
 
 {::options parse_block_html="false" /}
 
-<nav class="navbar justify-content-between navbar-expand-lg navbar-light bg-light headline-wrapper">
-  <div class="container">
-	<span class="navbar-brand headline">Search Results</span>
-    <span>
-		<button onclick="p -= 1; updateSearch()">prev</button>
-		<button onclick="p += 1; updateSearch()">next</button>
-	</span>
+<nav class="headline-wrapper flex flex-col gap-3 bg-[#eee] px-4 py-2 md:grid md:grid-cols-[minmax(0,4fr)_minmax(14rem,1fr)] md:items-center">
+  <div class="flex flex-wrap items-center justify-between gap-2">
+    <span class="headline text-lg">Search Results</span>
+    <span class="flex items-center gap-2">
+      <button class="rounded border border-gray-300 bg-white px-2 py-1 text-sm hover:bg-gray-50" onclick="p -= 1; updateSearch()">prev</button>
+      <button class="rounded border border-gray-300 bg-white px-2 py-1 text-sm hover:bg-gray-50" onclick="p += 1; updateSearch()">next</button>
+    </span>
   </div>
-  <form class="form-inline my-2 my-lg-0 search" id="x-search" role="search">
-    <input class="form-control mr-sm-2" id="x-search-query" type="text" name="q" placeholder="Search" />
+  <form class="search w-full" id="x-search" role="search">
+    <input class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" id="x-search-query" type="text" name="q" placeholder="Search" />
   </form>
 </nav>
 
 <div class="main-wrapper">
 {% if page.layout == "entry" %}
-  {%- include sidebar.html -%}
+  {%- include docs-sidebar.html  -%}
 {%- endif %}
 
   <main class="main-content" id="main">

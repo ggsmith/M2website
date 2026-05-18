@@ -1,0 +1,12 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "liquid": "html",
+    "markdown": "html",
+    "jekyll": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "class=\"([^\"]*)\"",
+    "className=\"([^\"]*)\""
+  ]
+}

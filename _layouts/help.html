@@ -2,29 +2,40 @@
 layout: default
 ---
 
-<nav class="navbar justify-content-between navbar-expand-lg navbar-light bg-light headline-wrapper">
-  <span class="navbar-brand headline">
+<nav
+  class="headline-wrapper flex flex-col gap-3 bg-[#eee] px-4 py-2 md:grid md:grid-cols-[minmax(0,4fr)_minmax(14rem,1fr)] md:items-center"
+>
+  <span class="headline min-w-0 text-lg">
     <a id="pkgname" href="#Macaulay2Doc"></a>
-    <span class="text-muted">::</span>
+    <span class="text-gray-500">::</span>
     <a id="headline" href="#Macaulay2Doc"></a>
   </span>
-  <form class="form-inline my-2 my-lg-0 search" id="x-search" role="search" action="{{ site.baseurl }}/search/">
-    <input class="form-control mr-sm-2" id="x-search-query" type="text" name="q" placeholder="Search" />
+  <form
+    class="search w-full"
+    id="x-search"
+    role="search"
+    action="{{ site.baseurl }}/search/"
+  >
+    <input
+      class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+      id="x-search-query"
+      type="text"
+      name="q"
+      placeholder="Search"
+    />
   </form>
 </nav>
 
 <script src="{{ site.url }}{{ site.baseurl }}/static/packages.js"></script>
 
 <div class="main-wrapper">
-{% include sidebar.html %}
+  {% include docs-sidebar.html %}
 
   <main class="main-content" id="main">
     <article class="main-page-content" id="content">
-
-<!-- ################################ help ############################### -->
-{{ content }}
-<!-- ##################################################################### -->
-
+      <!-- ################################ help ############################### -->
+      {{ content }}
+      <!-- ##################################################################### -->
     </article>
   </main>
 </div>
