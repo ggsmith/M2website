@@ -35,7 +35,7 @@ betti I -- displays the Betti table
 
 #### Getting help:
 ```
--- quick usage information
+-- quick usage information here
 ? monomialCurveIdeal
 ```
 ```
