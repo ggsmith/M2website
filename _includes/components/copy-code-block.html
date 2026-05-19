@@ -1,0 +1,13 @@
+<div class="relative w-full min-w-0 overflow-hidden">
+  <pre
+    class="!overflow-x-auto !whitespace-pre pr-10"
+  ><code class="language-{{ include.language | default: 'text' }}">{{ include.code | escape }}</code></pre>
+  <button
+    type="button"
+    class="copy-code-button !bg-[#d8ffff] absolute right-0.25 top-2 button-sm button-ghost !p-1 !px-2"
+    aria-label="Copy code"
+    data-copy-code="{{ include.code | escape }}"
+  >
+    <i data-lucide="clipboard" class="size-4"></i>
+  </button>
+</div>

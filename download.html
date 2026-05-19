@@ -1,0 +1,314 @@
+---
+layout: page
+title: Get M2
+category: links
+order: 2
+use_options:
+  - number: 1
+    title: Use Online (Recommended for first time users)
+    description: >
+      Start Macaulay2 in your browser with no installation required. This is the
+      quickest way to try examples, follow a workshop, or check whether M2 fits
+      your needs.
+    href: https://www.unimelb-macaulay2.cloud.edu.au
+  - number: 2
+    title: Install Locally
+    description: >
+      Install Macaulay2 on your own computer for regular use, offline work, and
+      access to your local files. This is the best option once you know you will
+      use M2 often.
+    href: "#install"
+  - number: 3
+    title: GitHub Codespaces
+    description: >
+      Run Macaulay2 in a ready-to-use cloud development environment through
+      GitHub. Codespaces is helpful when local installation is difficult or when
+      you want a consistent setup across machines.
+    href: "#codespaces"
+install_options:
+  - os: MacOS
+    steps:
+      - number: 1
+        title: Find the terminal
+        instructions: |
+          <p class="text-muted-foreground text-lg">Open Spotlight Search with <kbd class="rounded border border-app-border px-1 py-0.5">Cmd + Spacebar</kbd>, then search for <code>Terminal</code>. Click the Terminal app in the search results, and a terminal window should open.</p>
+      - number: 2
+        title: Install Homebrew
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">Go to the <a href="https://brew.sh/">Homebrew website</a>, then return to the terminal you opened in the previous step. Enter the install command shown on the Homebrew site; it currently looks like this:</p>
+          - type: code
+            language: bash
+            value: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">Press return to run it. Homebrew will probably ask for your password; type it and press return again. No characters will appear while you type your password, which is normal. The command may change, so always verify the current command on the Homebrew website.</p>
+      - number: 3
+        title: Add Homebrew to PATH
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">After installation, Homebrew will likely print commands for adding Homebrew to your <code>PATH</code> so your Mac knows where the software lives. These commands can be different for each user, so copy the commands shown in your own terminal, paste them in, and press return.</p>
+              <p class="text-muted-foreground text-lg">To confirm Homebrew is available, run:</p>
+          - type: code
+            language: bash
+            value: brew help
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">If you see help output with sections like example usage, troubleshooting, contributing, and further help, you are ready to continue.</p>
+      - number: 4
+        title: Install Macaulay2
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">In the terminal, run the following command to install Macaulay2. This might take a few minutes.</p>
+          - type: code
+            language: bash
+            value: brew install Macaulay2/tap/M2
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">If the command has changed or does not work, refer to the <a href="https://github.com/Macaulay2/homebrew-tap">Macaulay2 Homebrew tap</a> or the <a href="https://mahrud.github.io/LearnM2/download/">Macaulay2 download page</a>.</p>
+              <p class="text-muted-foreground text-lg">To confirm the installation, run:</p>
+          - type: code
+            language: bash
+            value: M2
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">If you see output like this, you are good to go:</p>
+          - type: code
+            language: text
+            value: |
+              Macaulay2, version x.xx.xx
+              Type "help" to see useful commands
+
+              i1 :
+    helpful_links:
+      - title: Homebrew
+        href: https://brew.sh/
+      - title: Macaulay2 Homebrew tap
+        href: https://github.com/Macaulay2/homebrew-tap
+      - title: Macaulay2 download page
+        href: https://mahrud.github.io/LearnM2/download/
+  - os: Windows
+    steps:
+      - number: 1
+        title: Open PowerShell as Administrator
+        instructions: |
+          <p class="text-muted-foreground text-lg">On Windows, Macaulay2 is easiest to install through <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a> using Ubuntu. Open the Start menu, search for <code>PowerShell</code>, right-click it, and choose <strong>Run as administrator</strong>.</p>
+      - number: 2
+        title: Install WSL
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">In the administrator PowerShell window, run:</p>
+          - type: code
+            language: powershell
+            value: wsl --install
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">Restart your computer if Windows asks you to. This command normally enables WSL and installs Ubuntu by default. If the command is unavailable or fails because WSL is missing, install the latest WSL package from <a href="https://github.com/microsoft/WSL/releases">Microsoft's WSL releases page</a>, then try the command again.</p>
+      - number: 3
+        title: Install or Launch Ubuntu
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">If Ubuntu was not installed by the previous command, run this from PowerShell:</p>
+          - type: code
+            language: powershell
+            value: wsl --install -d Ubuntu
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">You can also install Ubuntu from the Microsoft Store by searching for <code>Ubuntu</code> and choosing an LTS release. Launch Ubuntu from the Start menu, wait for it to finish setting up, and create the Linux username and password it asks for.</p>
+      - number: 4
+        title: Install Macaulay2 in Ubuntu
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">These commands go in the Ubuntu terminal, not in PowerShell. Add the stable Macaulay2 Ubuntu PPA, update package lists, and install Macaulay2:</p>
+          - type: code
+            language: bash
+            value: |
+              sudo apt update
+              sudo add-apt-repository ppa:macaulay2/macaulay2
+              sudo apt update
+              sudo apt install macaulay2
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">If Ubuntu says <code>add-apt-repository</code> is not found, run <code>sudo apt install software-properties-common</code>, then repeat the PPA command. The older <code>ppa:profzoom/macaulay2</code> PPA is for development builds, so use the stable PPA above unless you specifically want a development version.</p>
+      - number: 5
+        title: Confirm the Windows Setup
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">Still inside Ubuntu, run:</p>
+          - type: code
+            language: bash
+            value: M2
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">If you see the Macaulay2 welcome text and an <code>i1 :</code> prompt, the installation worked. Type <code>exit</code> to leave Macaulay2, and type <code>exit</code> again to close the Ubuntu shell.</p>
+    helpful_links:
+      - title: Microsoft WSL install guide
+        href: https://learn.microsoft.com/en-us/windows/wsl/install
+      - title: Microsoft WSL releases
+        href: https://github.com/microsoft/WSL/releases
+      - title: Ubuntu on Microsoft Store
+        href: https://apps.microsoft.com/detail/9pdxgncfsczv
+      - title: Macaulay2 Linux installation wiki
+        href: https://github.com/Macaulay2/M2/wiki/Installing-Macaulay2-in-Linux
+  - os: Linux
+    steps:
+      - number: 1
+        title: Open a Linux Terminal
+        instructions: |
+          <p class="text-muted-foreground text-lg">On Linux, you do not need WSL. Open your normal terminal application and use the commands for your distribution. Ubuntu and Debian-based systems use <code>apt</code>, while Fedora and similar systems use <code>dnf</code>.</p>
+      - number: 2
+        title: Install on Ubuntu
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">For supported Ubuntu releases, the Macaulay2 project recommends adding the stable Macaulay2 PPA and installing with <code>apt</code>:</p>
+          - type: code
+            language: bash
+            value: |
+              sudo apt update
+              sudo add-apt-repository ppa:macaulay2/macaulay2
+              sudo apt update
+              sudo apt install macaulay2
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">If <code>add-apt-repository</code> is missing, install it with <code>sudo apt install software-properties-common</code>, then rerun the PPA command.</p>
+      - number: 3
+        title: Install on Debian
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">On Debian, Macaulay2 is available through <code>apt</code>, though stable Debian may provide an older version. Start with:</p>
+          - type: code
+            language: bash
+            value: |
+              sudo apt update
+              sudo apt install macaulay2
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">For newer packages on Debian stable, follow the Debian-specific repository instructions on the <a href="https://github.com/Macaulay2/M2/wiki/Installing-Macaulay2-in-Linux">Macaulay2 Linux installation wiki</a>, since the repository file depends on your Debian release.</p>
+      - number: 4
+        title: Install on Fedora or RHEL-compatible Linux
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">Fedora users can install Macaulay2 with <code>dnf</code>:</p>
+          - type: code
+            language: bash
+            value: sudo dnf install Macaulay2
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">For the latest Fedora packages, or for Red Hat Enterprise Linux and compatible distributions such as Rocky Linux or AlmaLinux, use the repository instructions from the Macaulay2 Linux installation wiki before running the <code>dnf</code> install command.</p>
+      - number: 5
+        title: Confirm the Linux Setup
+        content:
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">After installation, start Macaulay2 from your Linux terminal:</p>
+          - type: code
+            language: bash
+            value: M2
+          - type: html
+            value: |
+              <p class="text-muted-foreground text-lg">If you see the Macaulay2 welcome text and an <code>i1 :</code> prompt, the installation worked. Type <code>exit</code> to leave Macaulay2.</p>
+    helpful_links:
+      - title: Macaulay2 Linux installation wiki
+        href: https://github.com/Macaulay2/M2/wiki/Installing-Macaulay2-in-Linux
+      - title: Macaulay2 Ubuntu packages
+        href: https://macaulay2.com/Downloads/GNU-Linux/Ubuntu/
+      - title: Macaulay2 GitHub repository
+        href: https://github.com/Macaulay2/M2
+---
+
+<div class="w-full flex flex-col items-start gap-8">
+  <div class="flex flex-col gap-8 w-full">
+    <div class="flex flex-col gap-4">
+      <h1 class="text-5xl font-bold text-left">Ways to use Macaulay2</h1>
+      <p class="text-muted-foreground text-lg">
+        To use Macaulay 2, you have a few options.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 @md:grid-cols-2 @lg:grid-cols-3 gap-4">
+      {% for option in page.use_options %}
+      <a href="{{option.href}}" class="w-full h-full">
+        <div
+          class="border rounded-md p-5 w-full bg-card hover:scale-103 transition-all duration-300 h-full flex items-start gap-4"
+        >
+          <div
+            class="size-10 shrink-0 rounded-full bg-accent flex items-center justify-center"
+          >
+            <span class="text-2xl font-bold !text-foreground"
+              >{{option.number}}</span
+            >
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-xl font-semibold !text-foreground">
+              {{option.title}}
+            </span>
+            <p class="!text-muted-foreground">{{option.description}}</p>
+          </div>
+        </div>
+      </a>
+
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-4 w-full">
+    <h2 id="install" class="text-4xl font-semibold text-left">Installation</h2>
+    <p class="text text-lg text-left text-muted-foreground">
+      If you have decided to install Macaulay2 locally, we have included
+      detailed installation instructions below. Should you encounter
+      difficulties during this process, you can either ask for help from
+      <a href="/community/get-involved#help">our amazing community</a>, use it
+      <a href="https://www.unimelb-macaulay2.cloud.edu.au">online</a> or in a
+      <a href="#codespaces">codespace (instructions below)</a>.
+    </p>
+  </div>
+  <div class="flex flex-col gap-8 w-full">
+    {% for option in page.install_options %}
+    <div class="flex flex-col gap-4">
+      <h3 class="text-2xl font-semibold">{{option.os}}</h3>
+      <div class="flex flex-col gap-4">
+        {% for step in option.steps %}
+        <div class="flex items-start gap-4">
+          <div
+            class="size-16 shrink-0 rounded-full bg-accent flex items-center justify-center"
+          >
+            <span class="text-3xl font-bold !text-foreground"
+              >{{step.number}}</span
+            >
+          </div>
+          <div class="flex min-w-0 flex-1 flex-col gap-1">
+            <h4 class="text-xl font-semibold">{{step.title}}</h4>
+            {% if step.content %} {% for item in step.content %} {% if item.type
+            == "code" %} {% include components/copy-code-block.html
+            code=item.value language=item.language %} {% else %} {{ item.value
+            }} {% endif %} {% endfor %} {% else %} {{ step.instructions }} {%
+            endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% if option.helpful_links %}
+      <div class="flex flex-col gap-2 rounded-md border border-app-border p-4">
+        <h4 class="text-xl font-semibold">Helpful links</h4>
+        <ul class="m-0 flex flex-col gap-1 p-0">
+          {% for link in option.helpful_links %}
+          <li class="list-none">
+            <a href="{{link.href}}" class="text-lg">{{link.title}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
