@@ -1,0 +1,86 @@
+---
+layout: page
+title: About
+category: links
+order: 1
+whys:
+  - title: Fast Computation
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae nibh at ipsum luctus facilisis. Curabitur feugiat lectus sed arcu interdum, vitae placerat neque gravida. Donec sit amet velit at sem posuere tincidunt.
+  - title: Research Ready
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non lacus vitae libero facilisis blandit. Sed porta orci vel augue pulvinar, ac cursus lorem congue. Morbi tincidunt magna nec justo varius, a gravida erat posuere.
+  - title: Clear Workflows
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum justo non nisi posuere, sed gravida ligula posuere. Aliquam consequat felis eget mauris suscipit, vitae feugiat massa malesuada. Suspendisse potenti sed vitae lorem at nibh commodo tempor.
+  - title: Flexible Packages
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt purus nec turpis aliquet, sit amet luctus justo fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada. Aenean vitae mi nec urna dignissim hendrerit.
+  - title: Community Support
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed augue vitae nisl pretium faucibus. Nunc luctus neque vel nibh bibendum, id efficitur lacus gravida. Phasellus at turpis non erat facilisis consequat.
+---
+
+<div class="w-full flex flex-col items-start gap-8">
+  <div class="flex flex-col gap-4">
+    <h2 class="text-4xl font-semibold text-left">What is Macaulay2?</h2>
+    <p class="text text-lg text-left text-muted-foreground">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quae, nesciunt
+      repellat deserunt voluptatibus, officia dignissimos ea consequuntur ex,
+      mollitia ipsum! Possimus asperiores error laudantium eveniet! Non tenetur
+      mollitia ducimus! Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Reiciendis mollitia omnis nisi? Modi ullam sed voluptates magnam
+      enim fuga sequi vitae corporis totam nulla, optio, atque ea nesciunt. Ad,
+      consectetur!
+    </p>
+  </div>
+  <div class="w-1/2 h-80 relative">
+    <img
+      src="/static/images/9planets.gif"
+      alt="9 Planets Syzygy image"
+      class="object-cover w-full h-full rounded-lg"
+    />
+  </div>
+  <div class="flex flex-col gap-4">
+    <h2 class="text-4xl font-semibold text-left">Why Macaulay2?</h2>
+    <div class="flex flex-col gap-2">
+      {% for why in page.whys %}
+      <span class="text-lg text-muted-foreground"
+        ><span class="font-semibold text-foreground">{{why.title}}: </span>
+        {{why.description}}</span
+      >
+      {% endfor %}
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <h2 class="text-4xl font-semibold text-left">Backstory</h2>
+    <p class="text text-lg text-left text-muted-foreground">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quae, nesciunt
+      repellat deserunt voluptatibus, officia dignissimos ea consequuntur ex,
+      mollitia ipsum! Possimus asperiores error laudantium eveniet! Non tenetur
+      mollitia ducimus! Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Reiciendis mollitia omnis nisi? Modi ullam sed voluptates magnam
+      enim fuga sequi vitae corporis totam nulla, optio, atque ea nesciunt. Ad,
+      consectetur!
+    </p>
+  </div>
+  <div class="flex flex-col gap-2">
+    <h2 class="text-4xl font-semibold text-left">Acknowledgements</h2>
+    <p class="text text-lg text-left text-muted-foreground">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quae, nesciunt
+      repellat deserunt voluptatibus, officia dignissimos ea consequuntur ex,
+      mollitia ipsum! Possimus asperiores error laudantium eveniet! Non tenetur
+      mollitia ducimus! Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Reiciendis mollitia omnis nisi? Modi ullam sed voluptates magnam
+      enim fuga sequi vitae corporis totam nulla, optio, atque ea nesciunt. Ad,
+      consectetur!
+    </p>
+  </div>
+  <div class="flex flex-col gap-2">
+    <h2 class="text-4xl font-semibold text-left">Contact Us</h2>
+    <p class="text text-lg text-left text-muted-foreground">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quae, nesciunt
+      repellat deserunt voluptatibus, officia dignissimos ea consequuntur ex,
+      mollitia ipsum! Possimus asperiores error laudantium eveniet! Non tenetur
+      mollitia ducimus! Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Reiciendis mollitia omnis nisi? Modi ullam sed voluptates magnam
+      enim fuga sequi vitae corporis totam nulla, optio, atque ea nesciunt. Ad,
+      consectetur!
+    </p>
+  </div>
+</div>

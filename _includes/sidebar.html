@@ -21,10 +21,19 @@
     <ul class="m-0 flex flex-col gap-1 p-0">
       {%- assign pages_list = site.pages | sort: 'order' -%} {%- for node in
       pages_list -%} {%- if node.title != null and node.category == "links" -%}
+      {% assign is_current_page = false %} {% if node.url == page.url %} {%
+      assign is_current_page = true %} {% endif %}
       <li>
         <a
-          class="block rounded px-2 py-1 text-lg text-app-text transition-all duration-200 hover:bg-app-surface-muted"
+          class="block rounded px-2 py-1 text-lg transition-all duration-200 hover:bg-app-surface-muted {% if is_current_page %}bg-app-surface-muted font-semibold text-app-link{% else %}text-app-text{% endif %}"
           href="{{ site.baseurl }}{{ node.url }}"
+          {%
+          if
+          is_current_page
+          %}aria-current="page"
+          {%
+          endif
+          %}
           >{{ node.title }}</a
         >
       </li>
