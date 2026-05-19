@@ -17,9 +17,11 @@
     title="RSS"
     href="{{ site.baseurl }}/atom.xml"
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&amp;display=swap"
   />
   <script>
     document.documentElement.classList.toggle(
@@ -31,9 +33,44 @@
   </script>
   <style type="text/tailwindcss">
     @custom-variant dark (&:where(.dark, .dark *));
+
+    @theme {
+      --color-background: var(--background);
+      --color-foreground: var(--foreground);
+      --color-card: var(--card);
+      --color-card-foreground: var(--card-foreground);
+      --color-popover: var(--popover);
+      --color-popover-foreground: var(--popover-foreground);
+      --color-primary: var(--primary);
+      --color-primary-foreground: var(--primary-foreground);
+      --color-secondary: var(--secondary);
+      --color-secondary-foreground: var(--secondary-foreground);
+      --color-muted: var(--muted);
+      --color-muted-foreground: var(--muted-foreground);
+      --color-accent: var(--accent);
+      --color-accent-foreground: var(--accent-foreground);
+      --color-warning: var(--warning);
+      --color-warning-foreground: var(--warning-foreground);
+      --color-success: var(--success);
+      --color-success-foreground: var(--success-foreground);
+      --color-destructive: var(--destructive);
+      --color-destructive-foreground: var(--destructive-foreground);
+      --color-border: var(--border);
+      --color-input: var(--input);
+      --color-ring: var(--ring);
+      --color-link: var(--link);
+      --color-app-bg: var(--app-bg);
+      --color-app-surface: var(--app-surface);
+      --color-app-surface-muted: var(--app-surface-muted);
+      --color-app-border: var(--app-border);
+      --color-app-text: var(--app-text);
+      --color-app-text-muted: var(--app-text-muted);
+      --color-app-link: var(--app-link);
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="{{ site.baseurl }}/scripts/responsive-sidebar.js"></script>
   <link rel="stylesheet" href="{{ site.baseurl }}/static/theme.css" />
   <link rel="stylesheet" href="{{ site.baseurl }}/static/style.css" />
   <link rel="stylesheet" href="{{ site.baseurl }}/static/sidebar.css" />

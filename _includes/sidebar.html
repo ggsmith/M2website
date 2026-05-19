@@ -1,30 +1,41 @@
-<div class="flex h-full w-80 flex-col gap-2 border-r border-[var(--app-border)] bg-[var(--app-bg)] p-5 text-[var(--app-text)]">
-  <a href="/LearnM2/">
-    <div class="flex items-center gap-2">
-      <div class="flex items-center justify-center rounded-md bg-[var(--app-surface-muted)] p-2">
-        <span class="text-5xl font-bold">M2</span>
+<div>
+  <div
+    id="sidebar-hidden-sheet"
+    class="fixed z-50 transition-opacity duration-300 opacity-0 pointer-events-none md:opacity-0 md:pointer-events-none inset-0 bg-foreground"
+  ></div>
+  <div
+    id="responsive-sidebar"
+    class="flex h-full z-100 fixed top-0 bottom-0 left-0s transition-all duration-300 -translate-x-full md:static md:translate-x-0 w-80 flex-col gap-2 border-r border-app-border bg-app-bg p-5 text-app-text"
+  >
+    <a href="{{site.baseurl}}/">
+      <div class="flex items-center gap-2">
+        <div
+          class="flex items-center justify-center rounded-md bg-app-surface-muted p-2"
+        >
+          <span class="text-5xl font-bold">M2</span>
+        </div>
+        <span class="text-4xl font-medium text-app-text">Macaulay2</span>
       </div>
-      <span class="text-4xl font-medium text-[var(--app-text)]">Macaulay2</span>
-    </div>
-  </a>
+    </a>
 
-  <ul class="m-0 flex flex-col gap-1 p-0">
-    {%- assign pages_list = site.pages | sort: 'order' -%} {%- for node in
-    pages_list -%} {%- if node.title != null and node.category == "links" -%}
-    <li>
-      <a
-        class="block rounded px-2 py-1 text-lg text-[var(--app-text)] transition-all duration-200 hover:bg-[var(--app-surface-muted)]"
-        href="{{ site.baseurl }}{{ node.url }}"
-        >{{ node.title }}</a
-      >
-    </li>
-    {%- endif -%} {%- endfor %}
-    <li>
-      <a
-        class="block rounded px-2 py-1 text-lg text-[var(--app-text)] transition-all duration-200 hover:bg-[var(--app-surface-muted)]"
-        href="https://github.com/Macaulay2/M2/wiki"
-        >Wiki</a
-      >
-    </li>
-  </ul>
+    <ul class="m-0 flex flex-col gap-1 p-0">
+      {%- assign pages_list = site.pages | sort: 'order' -%} {%- for node in
+      pages_list -%} {%- if node.title != null and node.category == "links" -%}
+      <li>
+        <a
+          class="block rounded px-2 py-1 text-lg text-app-text transition-all duration-200 hover:bg-app-surface-muted"
+          href="{{ site.baseurl }}{{ node.url }}"
+          >{{ node.title }}</a
+        >
+      </li>
+      {%- endif -%} {%- endfor %}
+      <li>
+        <a
+          class="block rounded px-2 py-1 text-lg text-app-text transition-all duration-200 hover:bg-app-surface-muted"
+          href="https://github.com/Macaulay2/M2/wiki"
+          >Wiki</a
+        >
+      </li>
+    </ul>
+  </div>
 </div>

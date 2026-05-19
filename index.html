@@ -1,0 +1,212 @@
+---
+layout: page
+title: Learn Macaulay2
+links:
+  - title: Try Online
+    icon: globe
+    href: "#"
+  - title: Install
+    icon: download
+    href: "#"
+  - title: Tutorials
+    icon: book-open
+    href: "#"
+showcase:
+  - title: Example Project 1
+    image: ./static/images/emacs0.png
+  - title: Example Project 2
+    image: ./static/images/emacs1.png
+  - title: Example Project 3
+    image: ./static/images/emacs2.png
+events:
+  - title: Macaulay2 Package Development Sprint
+    date: June 10 - June 15, 2026
+    summary: A focused sprint for improving package documentation, examples, tests, and contributor workflows across the Macaulay2 ecosystem.
+    category: Workshop
+    format: Hybrid
+    location: University of Illinois Chicago
+    difficulty: Intermediate
+    href: "#"
+    cta: Learn more
+  - title: Computations in Algebraic Geometry Seminar
+    date: July 6 - July 10, 2026
+    summary: A week of talks and hands-on examples using Macaulay2 for schemes, sheaves, resolutions, and computational experiments.
+    category: Seminar
+    format: Online
+    location: Virtual
+    difficulty: Beginner friendly
+    href: "#"
+    cta: View schedule
+  - title: Free Resolutions and Betti Tables Bootcamp
+    date: August 3 - August 7, 2026
+    summary: A practical introduction to computing and interpreting free resolutions, Betti diagrams, Hilbert functions, and related invariants.
+    category: Bootcamp
+    format: In person
+    location: University of California, Berkeley
+    difficulty: Introductory
+    href: "#"
+    cta: Apply
+  - title: Algebraic Statistics with Macaulay2
+    date: September 14 - September 18, 2026
+    summary: A collaborative working session on toric ideals, graphical models, Markov bases, and reproducible computational notebooks.
+    category: Working session
+    format: Hybrid
+    location: Georgia Tech
+    difficulty: Advanced
+    href: "#"
+    cta: Save the date
+  - title: Macaulay2 Documentation and Examples Day
+    date: October 20 - October 21, 2026
+    summary: A community day for polishing tutorials, adding small examples, improving search results, and making documentation easier to navigate.
+    category: Community
+    format: Online
+    location: Virtual
+    difficulty: Beginner friendly
+    href: "#"
+    cta: Contribute
+---
+
+<!-- todo: replace with real data -->
+<div class="flex flex-col items-center gap-32">
+  <div class="grid grid-cols-1 @xl:grid-cols-2 gap-4">
+    <div class="flex flex-col gap-4 items-center justify-center">
+      <div class="flex flex-col items-center gap-2">
+        <h1 class="text-5xl @lg:text-7xl font-bold">Macaulay2</h1>
+        <p class="text-xl text-center">
+          Software for algebraic geometry and commutative algebra
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        {% for link in page.links %}
+        <a href="{{ link.href }}">
+          <button class="button-default button-md flex items-center gap-2">
+            <i data-lucide="{{ link.icon }}" class="size-"></i>
+            {{ link.title }}
+          </button>
+        </a>
+
+        {% endfor %}
+      </div>
+    </div>
+    <div class="p-5">
+      <pre
+        class="language-macaulay2"
+      ><code class="language-macaulay2 !text-xl !p-5">i73 : Rbar = R/I
+o73 = Rbar
+o73 : QuotientRing
+
+i74 : pideal = substitute(pideal, Rbar)
+o74 = ideal (x + x , x , x )
+              0   3   1   2
+o74 : Ideal of Rbar
+
+i75 : S = kk[u,v,w]
+o75 = S
+o75 : PolynomialRing
+
+i76 : J = kernel map (Rbar, S, gens pideal)
+o76 = ideal(v3 - u*v*w + w3)
+o76 : Ideal of S</code></pre>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center gap-2">
+    <h1 class="text-5xl font-bold">Showcase</h1>
+    <p class="text-xl mb-8">Some projects of the community</p>
+    <div class="grid gap-4 grid-cols-1 @lg:grid-cols-2 @xl:grid-cols-3">
+      {% for project in page.showcase %}
+      <div
+        class="flex h-full flex-col bg-card rounded-md border overflow-hidden"
+      >
+        <div class="w-full h-80 relative border-b">
+          <img
+            src="{{ project.image }}"
+            alt="{{ project.title }} project image"
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <div class="p-4 flex flex-col gap-2">
+          <span class="text-xl font-semibold">{{ project.title }}</span>
+          <p class="line-clamp-4">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+            mollitia, non, id similique rem esse aliquid hic sed delectus dicta
+            qui voluptatum veniam aspernatur molestiae dolore iusto cupiditate
+            dolorum excepturi?Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Laudantium, necessitatibus perspiciatis maxime
+            fugiat sed sapiente possimus aut vero sequi nihil, pariatur enim
+            dolorem qui! Laborum soluta voluptates officiis necessitatibus
+            quasi.
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="button-md button-outline">View more</button>
+  </div>
+
+  <div class="flex flex-col items-center gap-2 w-full">
+    <h1 class="text-5xl font-bold">Events</h1>
+    <p class="text-xl mb-8">Upcoming events discussing Macaulay2</p>
+    <div class="grid gap-4 grid-cols-1 w-full">
+      {% for event in page.events %}
+      <div
+        class="flex flex-col @lg:flex-row gap-4 items-center bg-card w-full p-5 rounded-md border !border-l-[6px] !border-l-primary"
+      >
+        <div class="flex flex-col gap-2.5 flex-1">
+          <div class="flex flex-col @lg:flex-row @lg:items-center gap-4">
+            <div
+              class="flex items-center gap-2 py-1 px-2.5 rounded-md bg-secondary"
+            >
+              <i data-lucide="calendar" class="size-4 text-primary"></i>
+              <span class="text-sm font-medium">{{ event.date }}</span>
+            </div>
+            <div class="py-1 px-2.5 rounded-md border">
+              <span class="text-sm font-medium text-accent-foreground"
+                >{{ event.difficulty }}</span
+              >
+            </div>
+          </div>
+          <span class="text-xl font-semibold">{{event.title}}</span>
+          <p class="line-clamp-2 max-w-200">{{event.summary}}</p>
+          <div class="flex flex-col @lg:flex-row @lg:items-center gap-4">
+            <div class="flex items-center gap-2">
+              <i data-lucide="shapes" class="size-4 text-muted-foreground"></i>
+              <span class="text-sm text-muted-foreground"
+                >{{event.category}}</span
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="earth" class="size-4 text-muted-foreground"></i>
+              <span class="text-sm text-muted-foreground"
+                >{{event.format}}/{{event.location}}</span
+              >
+            </div>
+          </div>
+        </div>
+        <button class="button-md w-full @lg:w-fit button-default">
+          {{event.cta}}
+        </button>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="button-md button-outline">View more</button>
+  </div>
+
+  <div
+    class="flex p-4 @md:p-6 @lg:p-10 w-full rounded-md border-2 border-dashed flex flex-col items-center justify-center gap-6"
+  >
+    <h3 class="text-5xl text-center font-semibold">Ready to get started?</h3>
+    <div
+      class="flex flex-col @md:flex-row @md:items-center gap-2 w-full @md:w-fit"
+    >
+      <button class="button-lg button-default flex items-center gap-2 text-xl">
+        <i data-lucide="download"> </i>
+        Install
+      </button>
+      <button class="button-lg button-outline flex items-center gap-2 text-xl">
+        <i data-lucide="book"></i>
+        Read the Docs
+      </button>
+    </div>
+  </div>
+</div>

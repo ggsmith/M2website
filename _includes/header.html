@@ -1,18 +1,27 @@
 <header
-  class="flex w-full items-center justify-between gap-3 border-b border-[var(--app-border)] bg-[var(--app-bg)] p-4 text-[var(--app-text)]"
+  class="flex w-full items-center gap-3 border-b border-app-border bg-app-bg p-4 text-app-text"
 >
-  <div
-    class="flex items-center flex-1 w-full max-w-100 gap-2 rounded-md border border-[var(--app-border)] bg-[var(--app-surface)] p-2"
-  >
-    <i data-lucide="search" class="size-5 text-[var(--app-text-muted)]"></i>
-    <input
-      class="w-full focus-visible:outline-none focus-visible:border-none rounded-md bg-[var(--app-surface)] text-lg text-[var(--app-text)] placeholder:text-[var(--app-text-muted)]"
-      placeholder="Search the site..."
-    />
+  <div class="flex-1 w-full flex items-center gap-2">
+    <button
+      id="sidebar-toggle-button"
+      class="button-outline p-2 md:hidden rounded-md"
+    >
+      <i data-lucide="panel-right-close" class="text-muted-foreground"></i>
+    </button>
+    <div
+      class="flex items-center flex-1 w-full max-w-100 gap-2 rounded-md border border-app-border bg-app-surface p-2"
+    >
+      <i data-lucide="search" class="size-5 text-app-text-muted"></i>
+      <input
+        class="w-full focus-visible:outline-none focus-visible:border-none rounded-md bg-app-surface text-lg text-app-text placeholder:text-app-text-muted"
+        placeholder="Search the site..."
+      />
+    </div>
   </div>
+
   <button
     id="theme-toggle"
-    class="rounded p-2 cursor-pointer text-[var(--app-text-muted)] hover:bg-[var(--app-surface-muted)] hover:text-[var(--app-text)]"
+    class="rounded p-2 cursor-pointer text-app-text-muted hover:bg-app-surface-muted hover:text-app-text"
     type="button"
     aria-label="Toggle dark mode"
   >

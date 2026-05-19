@@ -1,12 +1,16 @@
+// .vscode/settings.json
 {
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   "tailwindCSS.includeLanguages": {
     "html": "html",
     "liquid": "html",
     "markdown": "html",
-    "jekyll": "html"
+    "scss": "css"
   },
-  "tailwindCSS.experimental.classRegex": [
-    "class=\"([^\"]*)\"",
-    "className=\"([^\"]*)\""
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className"
   ]
 }

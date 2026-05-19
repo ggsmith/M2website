@@ -1,8 +1,9 @@
-Learn Macaulay2
-===============
+# Learn Macaulay2
+
+_Make sure that you have installed ruby first._
 
 ```bash
-git clone git@github.com:mahrud/LearnM2.git
+git clone https://github.com/ggsmith/M2website.git
 cd LearnM2
 make install
 make serve

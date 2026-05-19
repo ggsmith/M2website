@@ -1,0 +1,48 @@
+<footer class="bg-accent p-5 @md:p-10 flex flex-col gap-8">
+  <div
+    class="flex gap-8 flex-col @lg:flex-wrap @lg:flex-row @lg:justify-between @lg:gap-2"
+  >
+    <div class="flex flex-col gap-8">
+      <div class="flex items-center gap-2">
+        <div
+          class="flex items-center justify-center rounded-md bg-app-surface-muted p-2"
+        >
+          <span class="text-3xl font-bold">M2</span>
+        </div>
+        <span class="text-2xl font-medium text-app-text">Macaulay2</span>
+      </div>
+      <span class="max-w-80"
+        >A software system devoted to supporting algebraic geometry and
+        communtative algebra.</span
+      >
+      <div class="flex items-center gap-4">
+        {% for social_link in site.data.social_links %}
+        <a href="{{ social_link.href }}" aria-label="{{ social_link.alt }}">
+          <button type="button" class="cursor-pointer">
+            <img
+              src="{{ site.baseurl }}/static/icons/{{ social_link.icon }}"
+              alt="{{ social_link.alt }}"
+              class="size-5 dark:invert"
+            />
+          </button>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% for link_group in site.data.footer_links %}
+    <div class="flex flex-col gap-4">
+      <span class="text-foreground font-semibold">{{link_group.title}}</span>
+      {% for link in link_group.links %}
+      <a href="{{link.href}}" class="!text-muted-foreground">{{link.title}}</a>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  <hr />
+  <div class="flex items-center justify-center">
+    <span class="text-center text-muted-foreground"
+      >&copy; 2026 Macaulay2 Development Team. Documentation licensed under GNU
+      Free Documentation License.</span
+    >
+  </div>
+</footer>

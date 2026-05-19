@@ -1,0 +1,36 @@
+- title: Software
+  links:
+    - title: Download
+      href: "#"
+    - title: Source Code
+      href: https://github.com/Macaulay2/M2
+    - title: Try Online
+      href: https://www.unimelb-macaulay2.cloud.edu.au/#home
+- title: Learn
+  links:
+    - title: Documentation
+      href: "#"
+    - title: Tutorials
+      href: "#"
+    - title: Workshops
+      href: "#"
+- title: Software
+  links:
+    - title: Issue Tracker
+      href: https://github.com/Macaulay2/M2/issues
+    - title: Mailing List
+      href: "#"
+    - title: Zulip
+      href: https://macaulay2.zulipchat.com
+    - title: Google Group
+      href: https://groups.google.com/group/macaulay2
+- title: Project
+  links:
+    - title: About
+      href: "/LearnM2/about"
+    - title: History
+      href: "#"
+    - title: Funding
+      href: "#"
+    - title: License
+      href: "#"

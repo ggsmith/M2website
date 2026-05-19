@@ -2,7 +2,7 @@
 <html lang="en-us">
   {% include head.html %}
   <body
-    class="theme-base-{{ site.color-scheme }} language-Macaulay2 bg-[var(--app-bg)] text-[var(--app-text)]"
+    class="theme-base-{{ site.color-scheme }} language-Macaulay2 bg-app-bg text-app-text"
   >
     <!-- Search results section -->
     <div class="mx-auto max-w-[800px] px-4">
@@ -14,10 +14,12 @@
       <div class="flex-1 w-full h-full overflow-hidden">
         <div class="w-full h-full flex flex-col">
           {%- include header.html -%}
-          <div class="flex-1 w-full overflow-y-auto">
+          <div class="flex-1 w-full overflow-y-auto @container">
             <!-- ######################################### default ######################################### -->
             {{ content }}
             <!-- ########################################################################################### -->
+
+            <div class="w-full mt-32">{%- include footer.html -%}</div>
           </div>
         </div>
       </div>
