@@ -32,13 +32,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
-	background: #b3d4fc;
+	background: #d8ffff;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
-	background: #b3d4fc;
+	background: #d8ffff;
 }
 
 @media print {
@@ -70,7 +70,13 @@ figure > pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	font-size: 0.75rem;
-	background: #f5f2f0;
+	background: #d8ffff;
+}
+
+:root:not(.dark) :not(pre) > code[class*="language-"],
+:root:not(.dark) pre[class*="language-"] {
+	background: #d8ffff;
+	background-color: #d8ffff;
 }
 
 /* Inline code (customized) */
@@ -133,7 +139,7 @@ dd > code[class*="language-"] {
 .style .token.string {
 	color: #9a6e3a;
 	/* This background color was intended by the author of this theme. */
-	background: hsla(0, 0%, 100%, .5);
+	background: #d8ffff;
 }
 
 .token.atrule,

@@ -11,14 +11,15 @@
     </div>
     <div class="flex w-screen h-screen">
       {%- include sidebar.html -%}
-      <div class="flex-1 w-full h-full overflow-hidden">
+      <div class="flex-1 min-w-0 h-full overflow-hidden">
         <div class="w-full h-full flex flex-col">
           {%- include header.html -%}
           <div class="flex-1 w-full overflow-y-auto @container">
-            <!-- ######################################### default ######################################### -->
-            {{ content }}
-            <!-- ########################################################################################### -->
-
+            <div class="mx-auto max-w-7xl">
+              <!-- ######################################### default ######################################### -->
+              {{ content }}
+              <!-- ########################################################################################### -->
+            </div>
             <div class="w-full mt-32">{%- include footer.html -%}</div>
           </div>
         </div>
