@@ -38,7 +38,7 @@ title: Search
   </main>
 </div>
 
-<script src="{{ site.url }}{{ site.baseurl }}/static/packages.js"></script>
+<script src="{{ site.baseurl }}/static/scripts/packages.js"></script>
 <script>
 var p = 0;
 function updateSearch(input) {

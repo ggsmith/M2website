@@ -1,0 +1,41 @@
+---
+layout: page
+title: Showcase
+permalink: /showcase/
+category: links
+order: 3
+---
+
+<div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-2">
+    <h1 class="text-4xl font-semibold">Showcase</h1>
+    <p class="text-lg text-muted-foreground">
+      Some of the coolest projects done with/using Macaulay2!
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+    {% assign random_projects = site.data.showcase | sample:
+    site.data.showcase.size %} {% for project in random_projects %} {% assign
+    length = project.description | size %} {% if length > 420 %} {% assign
+    card_class = "md:col-span-4 md:row-span-2" %} {% elsif length > 260 %} {%
+    assign card_class = "md:col-span-3 md:row-span-2" %} {% elsif length > 140
+    %} {% assign card_class = "md:col-span-3" %} {% else %} {% assign card_class
+    = "md:col-span-2" %} {% endif %}
+
+    <article class="{{ card_class }} rounded-md border bg-card overflow-hidden">
+      <div class="relative h-48 w-full border-b">
+        <img
+          src="..{{ project.image }}"
+          alt="{{ project.title }}"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="p-4">
+        <h2 class="text-xl font-semibold">{{ project.title }}</h2>
+        <p class="text-muted-foreground">{{ project.description }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>

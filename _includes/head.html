@@ -71,11 +71,12 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- App Scripts -->
-  <script src="{{ site.baseurl }}/scripts/responsive-sidebar.js"></script>
-  <script src="{{ site.baseurl }}/scripts/copy-buttons.js"></script>
-  <link rel="stylesheet" href="{{ site.baseurl }}/static/theme.css" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/static/style.css" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/static/sidebar.css" />
+  <script src="{{ site.baseurl }}/static/scripts/responsive-sidebar.js"></script>
+  <script src="{{ site.baseurl }}/static/scripts/sidebar-sublinks.js"></script>
+  <script src="{{ site.baseurl }}/static/scripts/copy-buttons.js"></script>
+  <link rel="stylesheet" href="{{ site.baseurl }}/static/styles/theme.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/static/styles/style.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/static/styles/sidebar.css" />
 
   <title>
     {% if page.title == "Home" %}{{ site.title }}{% else %}{{ page.title }}{%
@@ -165,11 +166,11 @@
 
   <!-- Prism -->
   <link
-    href="{{ site.baseurl }}/static/prism.css"
+    href="{{ site.baseurl }}/static/styles/prism.css"
     rel="stylesheet"
     type="text/css"
   />
-  <script src="{{ site.baseurl }}/static/prism-macaulay2.js"></script>
+  <script src="{{ site.baseurl }}/static/scripts/prism-macaulay2.js"></script>
 
   <!-- Handlebars -->
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>

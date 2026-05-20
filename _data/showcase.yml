@@ -1,0 +1,60 @@
+- title: Syzygy Atlas
+  image: /static/images/emacs0.png
+  description: A browsable notebook collection for comparing free resolutions across families of graded ideals.
+- title: Toric Degeneration Lab
+  image: /static/images/emacs1.png
+  description: An experimental workspace for testing candidate toric degenerations of projective varieties, with scripts that track initial ideals, Hilbert functions, and small visual summaries for seminar use.
+- title: Betti Table Gallery
+  image: /static/images/emacs2.png
+  description: A community-curated archive of unusual Betti tables gathered from computations in commutative algebra.
+- title: Sheaf Cohomology Sandbox
+  image: /static/images/emacs0.png
+  description: A teaching-oriented project that turns common sheaf cohomology calculations into reproducible Macaulay2 sessions. The examples range from line bundles on projective space to more complicated pushforwards, and each worksheet includes notes about what the calculation is meant to illustrate.
+- title: Numerical Meets Symbolic
+  image: /static/images/emacs1.png
+  description: Prototype scripts for moving between numerical experiments and exact algebraic verification.
+- title: Hilbert Scheme Sketchbook
+  image: /static/images/emacs2.png
+  description: A collection of small computations exploring components, tangent spaces, and examples on Hilbert schemes.
+- title: Monomial Ideals Field Notes
+  image: /static/images/emacs0.png
+  description: A compact set of examples for students learning Alexander duality, polarization, resolutions, and combinatorial invariants of monomial ideals. Some entries are only a few commands long, while others unfold into longer guided investigations.
+- title: Residual Intersections Workshop
+  image: /static/images/emacs1.png
+  description: Workshop material focused on residual intersections and linkage.
+- title: Curves in Projective Space
+  image: /static/images/emacs2.png
+  description: A mock research log following computations with embedded curves, including genus checks, saturations, random examples, and sanity tests for maps into projective space.
+- title: Primary Decomposition Bench
+  image: /static/images/emacs0.png
+  description: A benchmarking playground for comparing primary decomposition strategies on a rotating set of synthetic examples.
+- title: Schubert Calculus Notes
+  image: /static/images/emacs1.png
+  description: A set of classroom notes where Schubert calculus computations are paired with short Macaulay2 snippets. The project is written as if it were used alongside lectures, so some examples are deliberately tiny and others linger on interpretation.
+- title: Algebraic Statistics Starter Kit
+  image: /static/images/emacs2.png
+  description: Examples for toric ideals, Markov bases, and small graphical models.
+- title: Rees Algebra Explorer
+  image: /static/images/emacs0.png
+  description: A longer-form computational notebook for experimenting with Rees algebras, blowups, special fibers, and elimination presentations. It includes intentionally redundant calculations so readers can compare different ways to arrive at the same object.
+- title: Singularities Miniatures
+  image: /static/images/emacs1.png
+  description: Short examples involving Jacobian ideals, Milnor-style invariants, and local computations.
+- title: Chain Complex Playground
+  image: /static/images/emacs2.png
+  description: A small toolkit of examples for building, mapping, and inspecting chain complexes in Macaulay2.
+- title: Parameter Space Diary
+  image: /static/images/emacs0.png
+  description: A fictional research diary tracking families of examples over parameter spaces. The entries include failed attempts, successful simplifications, and comments about when a computation gives useful evidence versus when it only suggests a possible pattern.
+- title: Package Testing Harness
+  image: /static/images/emacs1.png
+  description: A practical template for organizing package examples, tests, and documentation snippets.
+- title: Determinantal Varieties Notebook
+  image: /static/images/emacs2.png
+  description: Guided computations with minors, expected codimension, singular loci, and sample resolutions for determinantal varieties.
+- title: Local Rings Workbench
+  image: /static/images/emacs0.png
+  description: A compact project for experimenting with localization, completions, tangent cones, and examples where global intuition can be misleading.
+- title: Graduate Algebra Companion
+  image: /static/images/emacs1.png
+  description: A broad set of supplementary Macaulay2 worksheets for a graduate algebra course. The project moves from quick demonstrations of ideals and modules to longer computations with exact sequences, tensor products, Ext, Tor, and examples that connect algebraic definitions to concrete output.

@@ -61,6 +61,6 @@ For many more key bindings and notation, see this [reference card](https://www.g
 ##### Try also: [`help "using Macaulay2 with Emacs"`]({{ site.baseurl }}/help/#Macaulay2Doc::using Macaulay2 with Emacs)
 
 <div id="content">
-<script src="{{ site.url }}{{ site.baseurl }}/static/packages.js"></script>
+<script src="{{ site.baseurl }}/static/scripts/packages.js"></script>
 <script>help("Macaulay2Doc::using Macaulay2 with Emacs")</script>
 </div>

@@ -11,13 +11,6 @@ links:
   - title: Tutorials
     icon: book-open
     href: "#"
-showcase:
-  - title: Example Project 1
-    image: /static/images/emacs0.png
-  - title: Example Project 2
-    image: /static/images/emacs1.png
-  - title: Example Project 3
-    image: /static/images/emacs2.png
 ---
 
 <!-- todo: replace with real data -->
@@ -65,11 +58,13 @@ o76 : Ideal of S</code></pre>
     </div>
   </div>
 
+  <!-- Showcase -->
   <div class="flex flex-col items-center gap-2">
     <h1 class="text-5xl font-bold">Showcase</h1>
     <p class="text-xl mb-8">Some projects of the community</p>
     <div class="grid gap-4 grid-cols-1 @lg:grid-cols-2 @xl:grid-cols-3">
-      {% for project in page.showcase %}
+      {% assign random_showcase = site.data.showcase | sample: 3 %} {% for
+      project in random_showcase %}
       <div
         class="flex h-full flex-col bg-card rounded-md border overflow-hidden"
       >
@@ -82,23 +77,19 @@ o76 : Ideal of S</code></pre>
         </div>
         <div class="p-4 flex flex-col gap-2">
           <span class="text-xl font-semibold">{{ project.title }}</span>
-          <p class="line-clamp-4">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-            mollitia, non, id similique rem esse aliquid hic sed delectus dicta
-            qui voluptatum veniam aspernatur molestiae dolore iusto cupiditate
-            dolorum excepturi?Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Laudantium, necessitatibus perspiciatis maxime
-            fugiat sed sapiente possimus aut vero sequi nihil, pariatur enim
-            dolorem qui! Laborum soluta voluptates officiis necessitatibus
-            quasi.
-          </p>
+          <p class="line-clamp-4">{{project.description}}</p>
         </div>
       </div>
       {% endfor %}
     </div>
-    <button class="button-md button-outline">View more</button>
+    <a href="/showcase"
+      ><button class="button-md button-outline !text-foreground">
+        View more
+      </button></a
+    >
   </div>
 
+  <!-- Events -->
   <div class="flex flex-col items-center gap-2 w-full">
     <h1 class="text-5xl font-bold">Events</h1>
     <p class="text-xl mb-8">Upcoming events discussing Macaulay2</p>
@@ -144,9 +135,14 @@ o76 : Ideal of S</code></pre>
       </div>
       {% endfor %}
     </div>
-    <button class="button-md button-outline">View more</button>
+    <a href="/events"
+      ><button class="button-md button-outline !text-foreground">
+        View more
+      </button></a
+    >
   </div>
 
+  <!-- CTA -->
   <div
     class="flex p-4 @md:p-6 @lg:p-10 w-full rounded-md border-2 border-dashed flex flex-col items-center justify-center gap-6"
   >
