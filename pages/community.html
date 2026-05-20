@@ -7,17 +7,83 @@ order: 4
 sublinks:
   - title: Get Involved
     href: "/community#get-involved"
-  - title: Contributors
-    href: "/community#contributors"
   - title: Publications
     href: "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C11&q=macaulay2&btnG="
+get_involved_options:
+  - title: Zulip
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fugiat recusandae. Sint, repudiandae. Eum, aut fugiat! Ut illo animi perferendis consequuntur harum ipsa eos minima, veniam pariatur, error cupiditate voluptas.
+    icon: zulip
+    href: https://macaulay2.zulipchat.com
+  - title: Google Group
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fugiat recusandae. Sint, repudiandae. Eum, aut fugiat! Ut illo animi perferendis consequuntur harum ipsa eos minima, veniam pariatur, error cupiditate voluptas.
+    icon: google-group
+    href: https://groups.google.com/group/macaulay2
+  - title: Wiki
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fugiat recusandae. Sint, repudiandae. Eum, aut fugiat! Ut illo animi perferendis consequuntur harum ipsa eos minima, veniam pariatur, error cupiditate voluptas.
+    icon: book-open
+    href: https://github.com/Macaulay2/M2/wiki
+  - title: Issues
+    description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fugiat recusandae. Sint, repudiandae. Eum, aut fugiat! Ut illo animi perferendis consequuntur harum ipsa eos minima, veniam pariatur, error cupiditate voluptas.
+    icon: bug
+    href: https://github.com/Macaulay2/M2/issues
 ---
 
-<div class="flex flex-col gap-4">
-  <div class="flex flex-col gap-2">
-    <h1 class="text-4xl font-semibold">Community</h1>
+<div class="flex flex-col gap-16">
+  <div class="flex flex-col gap-4">
+    <h1 class="text-4xl font-semibold">Our Community</h1>
+    <div class="grid grid-cols-1 @xl:grid-cols-2 gap-8">
+      <div class="w-full h-120 relative">
+        <img
+          src="{{ site.baseurl }}/static/images/new-macaulay2-community.jpg"
+          alt="Image of happy Macaulay2 users"
+          class="object-cover object-bottom w-full h-full rounded-lg"
+        />
+      </div>
+      <div class="w-full h-120 relative">
+        <img
+          src="{{ site.baseurl }}/static/images/macaulay2-workshop.jpg"
+          alt="Image of happy Macaulay2 users"
+          class="object-cover object-bottom w-full h-full rounded-lg"
+        />
+      </div>
+    </div>
+
     <p class="text-lg text-muted-foreground">
-      Some description about community shall go here...
+      Amazing community!!! Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Incidunt odio, rem quas voluptatum illo tenetur porro totam unde
+      voluptate vitae vel voluptates deserunt minus expedita. Suscipit
+      perspiciatis repudiandae obcaecati inventore?Lorem, ipsum dolor sit amet
+      consectetur adipisicing elit. Quam debitis distinctio repellat at id
+      consequatur laborum numquam aliquam ea, reiciendis, laboriosam quaerat
+      voluptatum a vitae aut ipsam ex! Magnam, ab.
     </p>
+  </div>
+  <div class="flex flex-col gap-2">
+    <h1 id="get-involved" class="text-4xl font-semibold">Get Involved</h1>
+    <p class="text-lg text-muted-foreground">
+      Here are some ways you can get involved with or ask questions to the
+      Macaulay2 commmunity.
+    </p>
+    <div
+      class="grid grid-cols-1 mt-4 @md:grid-cols-2 @lg:grid-cols-3 @xl:grid-cols-4 gap-8"
+    >
+      {% for option in page.get_involved_options %}
+      <a href="{{option.href}}" target="_blank">
+        <div
+          class="w-full rounded-md p-5 flex flex-col gap-2 border bg-card hover:scale-105 transition-all duration-300"
+        >
+          <img
+            src="{{site.baseurl}}/static/icons/{{option.icon}}.svg"
+            alt="{{option.title}} icon"
+            class="size-10 dark:invert"
+          />
+          <h2 class="text-2xl font-semibold !text-foreground">
+            {{option.title}}
+          </h2>
+          <p class="text-muted-foreground text-lg">{{option.description}}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </div>

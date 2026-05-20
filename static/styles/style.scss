@@ -52,6 +52,10 @@ img.feature {
   object-fit: contain;
 }
 
+img > div {
+  margin: auto !important;
+}
+
 .headline {
   text-wrap: wrap;
 }

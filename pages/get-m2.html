@@ -334,6 +334,17 @@ codespace_steps:
 
       {% endfor %}
     </div>
+    <!-- Help -->
+  <div class="flex flex-col gap-8 w-full">
+    <div class="flex flex-col gap-4 w-full">
+      <h2 class="text-4xl font-semibold text-left">
+        Help
+      </h2>
+      <p class="text text-lg text-left text-muted-foreground">
+        If you have tried everything and you couldn't get Macaulay2 to work, please head to the <a href="{{ site.baseurl }}/community">community section</a> where you can find some resources to help you troubleshoot issues, find help, and receive feedback. On top of this, we have also included some helpful links at the bottom of each installation guide for each operating system that you can explore. Asking an AI model for help is also a good option for help and guidance.
+      </p>
+    </div>
+  </div>
   </div>
 
   <!-- Installation -->
@@ -364,7 +375,7 @@ codespace_steps:
     <div class="flex flex-col gap-8 w-full">
       {% for option in page.install_options %}
       <div class="flex flex-col gap-4">
-        <h3 id="{{option.id}}" class="text-2xl font-semibold">{{option.os}}</h3>
+        <h3 id="{{option.id}}" class="text-3xl font-semibold">{{option.os}}</h3>
         <hr />
         <div class="flex flex-col gap-6">
           {% for step in option.steps %}
@@ -449,17 +460,5 @@ codespace_steps:
         </div>
         {% endfor %}
       </div>
-  </div>
-
-  <!-- Help -->
-  <div class="flex flex-col gap-8 w-full">
-    <div class="flex flex-col gap-4 w-full">
-      <h2 id="codespaces" class="text-4xl font-semibold text-left">
-        Help
-      </h2>
-      <p class="text text-lg text-left text-muted-foreground">
-        If you have tried everything and you couldn't get Macaulay2 to work, please head to the <a href="{{ site.baseurl }}/community">community section</a> where you can find some resources to help you troubleshoot issues, find help, and receive feedback. On top of this, we have also included some helpful links at the bottom of each installation guide for each operating system that you can explore. Asking an AI model for help is also a good option for help and guidance.
-      </p>
-    </div>
   </div>
 </div>

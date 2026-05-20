@@ -7,42 +7,34 @@ order: 5
 details:
   - description: "Macaulay2: Under the Hood"
     description_href: https://github.com/Macaulay2/M2/wiki/Internals%3A-Meeting-Notes
-    schedule: Every 2~3 months, online.
-  - description: Macaulay2 Internals
+    schedule: Every 2~3 months, virtual.
+  - description: Internals
     description_href: https://github.com/Macaulay2/M2/wiki/Macaulay2%3A-under-the-hood
-    schedule: Every 1~2 months, online.
-  - description: Macaulay2 Workshops
+    schedule: Every 1~2 months, virtual.
+  - description: Workshops
     description_href: https://macaulay2.com/Events/
     schedule: About 1~2 per year, see below.
 ---
 
 <div class="flex flex-col items-start gap-8 w-full">
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 w-full">
     <h1 class="text-4xl font-bold">Events</h1>
-
     <p class="text-lg">
       The Macaulay2 community regularly holds workshops and development
-      meetings.
-    </p>
-
-    <table class="p-2 border">
-      <tr class="border">
-        <th class="text-left border p-2">Description</th>
-        <th class="text-left border p-2">Approximate Schedule</th>
-      </tr>
-      {% for detail in page.details %}
-      <tr class="border p-2">
-        <td class="text-left border p-2">
-          <a href="{{detail.description_href}}">{{detail.description}}</a>
-        </td>
-        <td class="text-left border p-2">{{detail.schedule}}</td>
-      </tr>
-      {% endfor %}
-    </table>
-    <p class="text-lg">
-      For a list of collaboration repositories for Macaulay2 workshops,
+      meetings. For a list of collaboration repositories,
       <a href="https://github.com/Macaulay2">see here</a>.
     </p>
+    <div class="flex flex-col gap-1">
+      {% for detail in page.details %}
+      <span class="text-muted-foreground text-lg"
+        ><span class="font-semibold"
+          ><a href="{{detail.description_href}}"
+            >{{detail.description}}</a
+          ></span
+        >: {{detail.schedule}}</span
+      >
+      {% endfor %}
+    </div>
   </div>
 
   <hr />

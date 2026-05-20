@@ -24,10 +24,10 @@
       {% assign is_current_page = false %} {% if node.url == page.url %} {%
       assign is_current_page = true %} {% endif %} {% assign has_sublinks =
       node.sublinks.size > 0 %}
-      <li>
+      <div>
         <div class="flex flex-col gap-1">
           <div
-            class="flex items-center {% if has_sublinks %}cursor-pointer sidebar-link-with-sublinks{% endif %} gap-2 justify-between rounded px-2 py-1 transition-all duration-200 hover:bg-app-surface-muted {% if is_current_page %}bg-app-surface-muted{% endif %}"
+            class="flex items-center w-full {% if has_sublinks %}cursor-pointer sidebar-link-with-sublinks{% endif %} gap-2 justify-between rounded transition-all duration-200 hover:bg-app-surface-muted {% if is_current_page %}bg-app-surface-muted{% endif %}"
             {%
             if
             is_current_page
@@ -36,14 +36,17 @@
             endif
             %}
           >
-            <a href="{{ site.baseurl }}{{ node.url }}">
+            <a
+              href="{{ site.baseurl }}{{ node.url }}"
+              class="px-2 py-1 {% unless has_sublinks %}w-full{% endunless %}"
+            >
               <span
                 class="text-lg hover:underline {% if is_current_page %}font-semibold text-app-link{% else %}text-app-text{% endif %}"
                 >{{ node.title }}</span
               ></a
             >
             {% if has_sublinks %}
-            <i data-lucide="chevron-down"></i>
+            <i data-lucide="chevron-down" class="pr-2 shrink-0"></i>
             {% endif %}
           </div>
           {% if has_sublinks %}
@@ -74,13 +77,14 @@
 
           {% endif %}
         </div>
-      </li>
+      </div>
       {%- endif -%} {%- endfor %}
       <li>
         <a
-          class="block !text-foreground rounded px-2 py-1 text-lg text-app-text transition-all duration-200 hover:bg-app-surface-muted"
+          class="block !text-foreground rounded hover:underline px-2 py-1 text-lg text-app-text transition-all duration-200 hover:bg-app-surface-muted"
           href="https://github.com/Macaulay2/M2/wiki"
-          >Wiki</a
+          target="_blank"
+          >For Developers</a
         >
       </li>
     </ul>
