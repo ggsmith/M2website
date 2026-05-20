@@ -1,5 +1,33 @@
 /******************************************************************************/
 
+#responsive-sidebar.sidebar-collapsed-desktop {
+  width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-right-width: 0;
+}
+
+#responsive-sidebar.sidebar-open-desktop {
+  width: 20rem;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#responsive-sidebar.sidebar-collapsed-mobile {
+  translate: -100% 0;
+  transform: translateX(-100%);
+}
+
+#responsive-sidebar.sidebar-open-mobile {
+  translate: 0 0;
+  transform: translateX(0);
+}
+
+/******************************************************************************/
+
 /* Overall docs/help page layout wrapper around the main docs content, the
    package/sidebar navigation, and the on-page outline. */
 .main-wrapper {
