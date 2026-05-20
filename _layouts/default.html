@@ -14,13 +14,15 @@
       <div class="flex-1 min-w-0 h-full overflow-hidden">
         <div class="w-full h-full flex flex-col">
           {%- include header.html -%}
-          <div class="flex-1 w-full overflow-y-auto @container">
-            <div class="mx-auto max-w-[96rem]">
+          <div class="flex-1 min-h-0 w-full @container {% if page.layout == 'help' %}overflow-hidden{% else %}overflow-y-auto{% endif %}">
+            <div class="mx-auto max-w-[96rem] {% if page.layout == 'help' %}h-full min-h-0{% endif %}">
               <!-- ######################################### default ######################################### -->
               {{ content }}
               <!-- ########################################################################################### -->
             </div>
+            {% unless page.layout == 'help' %}
             <div class="w-full mt-32">{%- include footer.html -%}</div>
+            {% endunless %}
           </div>
         </div>
       </div>

@@ -2,18 +2,20 @@
 ---
 
 Handlebars.registerHelper('displayHTML',function(inputData){
-    data = new Handlebars.SafeString(inputData);
-    return ( data == "undefined" ? "" : data );
+    if (inputData == null) return "";
+    return new Handlebars.SafeString(inputData);
 });
 
 {% raw %}
 var template = Handlebars.compile(`
+{{ displayHTML DocHeader }}
 {{ displayHTML Synopsis }}
 {{ displayHTML Description }}
 {{ displayHTML SourceCode }}
 {{ displayHTML Acknowledgement }}
 {{ displayHTML Contributors }}
 {{ displayHTML References }}
+{{ displayHTML Citation }}
 {{ displayHTML Caveat }}
 {{ displayHTML SeeAlso }}
 {{ displayHTML Subnodes }}
@@ -23,11 +25,12 @@ var template = Handlebars.compile(`
 //////////////////////////////////////////////////////////////////////
 
 var version = "v1.26.05"
-{%- if site.url == "http://localhost:4000" %}
-var bucket = '{{ site.baseurl }}/packages/';
-{% else %}
-var bucket = 'https://raw.githubusercontent.com/mahrud/LearnM2/refs/heads/learn/_packages/';
-{% endif -%}
+var staticImages = '{{ site.baseurl }}/static/images';
+var localBucket = '{{ site.baseurl }}/packages/';
+var remoteBucket = 'https://raw.githubusercontent.com/mahrud/LearnM2/refs/heads/learn/_packages/';
+var bucket = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
+    ? localBucket
+    : remoteBucket;
 var repo = 'https://github.com/Macaulay2/M2/blob/development/'
 
 var database = new Map([]);
@@ -90,10 +93,10 @@ function makeSubmenu(toc, pkgname, current) {
 	open = open || key == current;
 	var n = Object.keys(subtoc).length;
 	var node = "#" + pkgname + "::" + key;
-	var style = key == current ? `background-color: yellow` : "";
+	const className = key == current ? `bg-accent` : "";
 	if (Object.keys(subtoc).length == 0) return `
         <li class="index-item">
-          <a style="${style}" href="${node}" onclick="openNode('${node}')"><tt>${key}</tt></a>
+          <a class="${className}" href="${node}" onclick="openNode('${node}')"><tt>${key}</tt></a>
         </li>`;
 	var [submenu, subopen] = makeSubmenu(subtoc, pkgname, current);
 	var openattr = (subopen || key == current) ? "open" : "";
@@ -101,7 +104,7 @@ function makeSubmenu(toc, pkgname, current) {
 	return `
         <li class="index-item toggle">
           <details ${openattr}>
-            <summary><a style="${style}" href="${node}" onclick="openNode('${node}')"><tt>${key}</tt></a></summary>
+            <summary><a class="${className}" href="${node}" onclick="openNode('${node}')"><tt>${key}</tt></a></summary>
             <ol>${submenu}
             </ol>
           </details>
@@ -176,7 +179,8 @@ function fixLinks(content) {
     return content
 	.replace(/href="..\/..\/Macaulay2\/packages\/.+?">([a-zA-Z0-9\/]+\.m2):([0-9]+):([0-9]+)<\/a>/,
 		 "href=\"" + repo + "M2/Macaulay2/packages/$1#L$2\">$1:$2:$3</a>")
-	.replaceAll("../../Macaulay2/Style", "/LearnM2/static");
+	.replaceAll("../../Macaulay2/Style", staticImages)
+	.replaceAll('src="/static/images/', 'src="' + staticImages + '/');
 }
 
 // TODO: also handle #[pkgname] and #[pkgname]#[anchor] inputs

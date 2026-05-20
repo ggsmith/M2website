@@ -2,40 +2,55 @@
 layout: default
 ---
 
-<nav
-  class="headline-wrapper flex flex-col gap-3 bg-[#eee] px-4 py-2 md:grid md:grid-cols-[minmax(0,4fr)_minmax(14rem,1fr)] md:items-center"
->
-  <span class="headline min-w-0 text-lg">
-    <a id="pkgname" href="#Macaulay2Doc"></a>
-    <span class="text-gray-500">::</span>
-    <a id="headline" href="#Macaulay2Doc"></a>
-  </span>
-  <form
-    class="search w-full"
-    id="x-search"
-    role="search"
-    action="{{ site.baseurl }}/search/"
+<div class="flex h-full min-h-0 flex-col">
+  <nav
+    class="w-full shrink-0 border-b p-4 flex flex-col gap-3 bg-card px-4 py-2 md:grid md:grid-cols-[minmax(0,4fr)_minmax(14rem,1fr)] md:items-center"
   >
-    <input
-      class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-      id="x-search-query"
-      type="text"
-      name="q"
-      placeholder="Search"
-    />
-  </form>
-</nav>
+    <span class="headline min-w-0 text-lg">
+      <a id="pkgname" href="#Macaulay2Doc"></a>
+      <span class="text-gray-500">/</span>
+      <a id="headline" href="#Macaulay2Doc" class="capitalize"></a>
+    </span>
+    <form
+      class="search w-full"
+      id="x-search"
+      role="search"
+      action="{{ site.baseurl }}/search/"
+    >
+      <input
+        class="w-full rounded border px-3 py-1 text-base shadow-sm"
+        id="x-search-query"
+        type="text"
+        name="q"
+        placeholder="Search"
+      />
+    </form>
+  </nav>
 
-<script src="{{ site.baseurl }}/static/scripts/packages.js"></script>
+  <script src="{{ site.baseurl }}/static/scripts/packages.js"></script>
 
-<div class="main-wrapper">
-  {% include docs-sidebar.html %}
-
-  <main class="main-content" id="main">
-    <article class="main-page-content" id="content">
-      <!-- ################################ help ############################### -->
-      {{ content }}
-      <!-- ##################################################################### -->
-    </article>
-  </main>
+  <div class="flex min-h-0 w-full flex-1 overflow-hidden">
+    <aside
+      class="w-65 min-h-0 bg-card flex flex-col gap-2 p-4 border-r overflow-x-auto overflow-y-auto"
+    >
+      <h3 class="text-xl font-semibold">Documentation</h3>
+      <ol class="index-list" id="index-list"></ol>
+    </aside>
+    <main class="main-content flex-1 min-h-0 overflow-hidden" id="main">
+      <article
+        class="main-page-content h-full min-h-0 overflow-y-auto p-5 md:p-8"
+        id="content"
+      >
+        <!-- ################################ help ############################### -->
+        {{ content }}
+        <!-- ##################################################################### -->
+      </article>
+    </main>
+    <aside
+      class="w-65 min-h-0 bg-card flex flex-col gap-2 p-4 border-l overflow-y-auto"
+    >
+      <h3 class="text-xl font-semibold">Page Outline</h3>
+      <ul class="outline-list" id="outline-list"></ul>
+    </aside>
+  </div>
 </div>

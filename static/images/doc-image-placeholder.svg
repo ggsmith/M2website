@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Documentation image placeholder">
+  <rect width="960" height="540" fill="#f8fafc"/>
+  <rect x="32" y="32" width="896" height="476" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="14 14"/>
+  <path d="M320 346l96-104 78 82 48-52 98 74H320z" fill="#dbeafe" stroke="#2563eb" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="604" cy="194" r="42" fill="#fef3c7" stroke="#d97706" stroke-width="8"/>
+  <text x="480" y="430" text-anchor="middle" fill="#475569" font-family="Outfit, Arial, sans-serif" font-size="34" font-weight="700">Documentation image unavailable</text>
+</svg>

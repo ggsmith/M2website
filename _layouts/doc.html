@@ -2,24 +2,41 @@
 layout: default
 ---
 
-<nav class="headline-wrapper flex flex-col gap-3 bg-[#eee] px-4 py-2 md:grid md:grid-cols-[minmax(0,4fr)_minmax(14rem,1fr)] md:items-center">
-  <span class="headline min-w-0 text-lg">
-    <span id="headline">{{ page.title }}</span>
-  </span>
+NO CONTENT
 
-  <form class="search w-full" id="x-search" role="search" action="{{ site.baseurl }}/search/">
-    <input class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500" id="x-search-query" type="text" name="q" placeholder="Search" />
-  </form>
-</nav>
+<div>
+  <!-- <nav
+    class="headline-wrapper flex flex-col gap-3 bg-[#eee] px-4 py-2 md:grid md:grid-cols-[minmax(0,4fr)_minmax(14rem,1fr)] md:items-center"
+  >
+    <span class="headline min-w-0 text-lg">
+      <span id="headline">{{ page.title }}</span>
+    </span>
 
-<div class="main-wrapper">
-  <main class="main-content" id="main">
-    <article class="main-page-content" id="content">
+    <form
+      class="search w-full"
+      id="x-search"
+      role="search"
+      action="{{ site.baseurl }}/search/"
+    >
+      <input
+        class="w-full rounded border border-gray-300 bg-white px-3 py-1 text-base text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        id="x-search-query"
+        type="text"
+        name="q"
+        placeholder="Search"
+      />
+    </form>
+  </nav>
 
-<!-- ################################ doc ################################ -->
-{{ content }}
-<!-- ##################################################################### -->
-
-    </article>
-  </main>
+  <div class="flex bg-red-400">
+    <aside>this content</aside>
+    <main class="main-content flex-1" id="main">
+      <article class="main-page-content" id="content">
+        <!-- ################################ doc ################################ -->
+        {{ content }}
+        <!-- ##################################################################### -->
+      </article>
+    </main>
+    <aside>this content</aside>
+  </div> -->
 </div>
