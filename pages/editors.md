@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Emacs Cheat Sheet
+permalink: /editors/
 ---
 
 ### Emacs Cheat Sheet
@@ -57,7 +58,7 @@ For many more key bindings and notation, see this [reference card](https://www.g
 {%- endfor -%}
 </div>
 
-##### Try also: [`help "using Macaulay2 with Emacs"`](../help/#Macaulay2Doc::using Macaulay2 with Emacs)
+##### Try also: [`help "using Macaulay2 with Emacs"`]({{ site.baseurl }}/help/#Macaulay2Doc::using Macaulay2 with Emacs)
 
 <div id="content">
 <script src="{{ site.url }}{{ site.baseurl }}/static/packages.js"></script>

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Events
+permalink: /events/
 category: links
 order: 5
 ---

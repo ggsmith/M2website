@@ -1,6 +1,7 @@
 ---
 layout: help
 title: Help
+permalink: /help/
 category: links
 order: 7
 ---

@@ -1,6 +1,7 @@
 ---
 layout: help
 title: Packages
+permalink: /packages/
 category: links
 order: 3
 ---
