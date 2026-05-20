@@ -1,0 +1,106 @@
+---
+layout: page
+title: Events
+permalink: /events/
+category: links
+order: 5
+details:
+  - description: "Macaulay2: Under the Hood"
+    description_href: https://github.com/Macaulay2/M2/wiki/Internals%3A-Meeting-Notes
+    schedule: Every 2~3 months, online.
+  - description: Macaulay2 Internals
+    description_href: https://github.com/Macaulay2/M2/wiki/Macaulay2%3A-under-the-hood
+    schedule: Every 1~2 months, online.
+  - description: Macaulay2 Workshops
+    description_href: https://macaulay2.com/Events/
+    schedule: About 1~2 per year, see below.
+---
+
+<div class="flex flex-col items-start gap-8 w-full">
+  <div class="flex flex-col gap-2">
+    <h1 class="text-4xl font-bold">Events</h1>
+
+    <p class="text-lg">
+      The Macaulay2 community regularly holds workshops and development
+      meetings.
+    </p>
+
+    <table class="p-2 border">
+      <tr class="border">
+        <th class="text-left border p-2">Description</th>
+        <th class="text-left border p-2">Approximate Schedule</th>
+      </tr>
+      {% for detail in page.details %}
+      <tr class="border p-2">
+        <td class="text-left border p-2">
+          <a href="{{detail.description_href}}">{{detail.description}}</a>
+        </td>
+        <td class="text-left border p-2">{{detail.schedule}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <p class="text-lg">
+      For a list of collaboration repositories for Macaulay2 workshops,
+      <a href="https://github.com/Macaulay2">see here</a>.
+    </p>
+  </div>
+
+  <hr />
+
+  <div class="grid gap-4 grid-cols-1 w-full">
+    {% for event in site.data.events %}
+    <div
+      class="flex flex-col @lg:flex-row gap-4 items-center bg-card w-full p-5 rounded-md border !border-l-[6px] !border-l-primary"
+    >
+      <div class="flex flex-col gap-2.5 flex-1">
+        <div class="flex flex-col @lg:flex-row @lg:items-center gap-4">
+          <div
+            class="flex items-center gap-2 py-1 px-2.5 rounded-md bg-secondary"
+          >
+            <i data-lucide="calendar" class="size-4 text-primary"></i>
+            <span class="text-sm font-medium">{{ event.date }}</span>
+          </div>
+          <div class="py-1 px-2.5 rounded-md border">
+            <span class="text-sm font-medium text-accent-foreground"
+              >{{ event.difficulty }}</span
+            >
+          </div>
+        </div>
+        <span class="text-xl font-semibold">{{event.title}}</span>
+        <p class="line-clamp-2 max-w-200">{{event.summary}}</p>
+        <div class="flex flex-col @lg:flex-row @lg:items-center gap-4">
+          <div class="flex items-center gap-2">
+            <i data-lucide="shapes" class="size-4 text-muted-foreground"></i>
+            <span class="text-sm text-muted-foreground"
+              >{{event.category}}</span
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="earth" class="size-4 text-muted-foreground"></i>
+            <span class="text-sm text-muted-foreground"
+              >{{event.format}}/{{event.location}}</span
+            >
+          </div>
+        </div>
+      </div>
+      <button class="button-md w-full @lg:w-fit button-default">
+        {{event.cta}}
+      </button>
+    </div>
+    {% endfor %}
+  </div>
+
+  <hr />
+
+  <div class="flex flex-col gap-4 w-full">
+    <h1 class="text-4xl font-bold">Calendar</h1>
+    <iframe
+      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FToronto&showPrint=0&showCalendars=0&mode=AGENDA&showNav=0&showTitle=0&src=amhyNTdvajVmcDB1YXVhYnB1bnNnY2M0OWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23795548"
+      style="border-width: 0"
+      width="100%"
+      height="500px"
+      frameborder="0"
+      scrolling="no"
+    ></iframe>
+  </div>
+</div>

@@ -56,6 +56,11 @@ img.feature {
   text-wrap: wrap;
 }
 
+hr {
+  width: 100%;
+  border: 1px solid var(--app-border);
+}
+
 #x-footer {
   padding-top: 14px;
   padding-bottom: 15px;

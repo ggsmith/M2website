@@ -18,52 +18,6 @@ showcase:
     image: /static/images/emacs1.png
   - title: Example Project 3
     image: /static/images/emacs2.png
-events:
-  - title: Macaulay2 Package Development Sprint
-    date: June 10 - June 15, 2026
-    summary: A focused sprint for improving package documentation, examples, tests, and contributor workflows across the Macaulay2 ecosystem.
-    category: Workshop
-    format: Hybrid
-    location: University of Illinois Chicago
-    difficulty: Intermediate
-    href: "#"
-    cta: Learn more
-  - title: Computations in Algebraic Geometry Seminar
-    date: July 6 - July 10, 2026
-    summary: A week of talks and hands-on examples using Macaulay2 for schemes, sheaves, resolutions, and computational experiments.
-    category: Seminar
-    format: Online
-    location: Virtual
-    difficulty: Beginner friendly
-    href: "#"
-    cta: View schedule
-  - title: Free Resolutions and Betti Tables Bootcamp
-    date: August 3 - August 7, 2026
-    summary: A practical introduction to computing and interpreting free resolutions, Betti diagrams, Hilbert functions, and related invariants.
-    category: Bootcamp
-    format: In person
-    location: University of California, Berkeley
-    difficulty: Introductory
-    href: "#"
-    cta: Apply
-  - title: Algebraic Statistics with Macaulay2
-    date: September 14 - September 18, 2026
-    summary: A collaborative working session on toric ideals, graphical models, Markov bases, and reproducible computational notebooks.
-    category: Working session
-    format: Hybrid
-    location: Georgia Tech
-    difficulty: Advanced
-    href: "#"
-    cta: Save the date
-  - title: Macaulay2 Documentation and Examples Day
-    date: October 20 - October 21, 2026
-    summary: A community day for polishing tutorials, adding small examples, improving search results, and making documentation easier to navigate.
-    category: Community
-    format: Online
-    location: Virtual
-    difficulty: Beginner friendly
-    href: "#"
-    cta: Contribute
 ---
 
 <!-- todo: replace with real data -->
@@ -149,7 +103,7 @@ o76 : Ideal of S</code></pre>
     <h1 class="text-5xl font-bold">Events</h1>
     <p class="text-xl mb-8">Upcoming events discussing Macaulay2</p>
     <div class="grid gap-4 grid-cols-1 w-full">
-      {% for event in page.events %}
+      {% for event in site.data.events limit: 5 %}
       <div
         class="flex flex-col @lg:flex-row gap-4 items-center bg-card w-full p-5 rounded-md border !border-l-[6px] !border-l-primary"
       >
