@@ -4,13 +4,13 @@ title: Learn Macaulay2
 links:
   - title: Try Online
     icon: globe
-    href: "#"
+    href: "https://www.unimelb-macaulay2.cloud.edu.au/#home"
   - title: Install
     icon: download
-    href: "#"
+    href: "/get-m2"
   - title: Tutorials
     icon: book-open
-    href: "#"
+    href: "/documentation"
 ---
 
 <!-- todo: replace with real data -->
@@ -150,14 +150,22 @@ o76 : Ideal of S</code></pre>
     <div
       class="flex flex-col @md:flex-row @md:items-center gap-2 w-full @md:w-fit"
     >
-      <button class="button-lg button-default flex items-center gap-2 text-xl">
-        <i data-lucide="download"> </i>
-        Install
-      </button>
-      <button class="button-lg button-outline flex items-center gap-2 text-xl">
-        <i data-lucide="book"></i>
-        Read the Docs
-      </button>
+      <a href="/get-m2">
+        <button
+          class="button-lg button-default flex items-center gap-2 text-xl !text-foreground"
+        >
+          <i data-lucide="download"> </i>
+          Install
+        </button>
+      </a>
+      <a href="/documentation">
+        <button
+          class="button-lg button-outline flex items-center gap-2 text-xl !text-foreground"
+        >
+          <i data-lucide="book"></i>
+          Read the Docs
+        </button>
+      </a>
     </div>
   </div>
 </div>

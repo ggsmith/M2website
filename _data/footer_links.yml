@@ -1,7 +1,7 @@
 - title: Software
   links:
     - title: Download
-      href: "#"
+      href: "/get-m2"
     - title: Source Code
       href: https://github.com/Macaulay2/M2
     - title: Try Online
@@ -9,11 +9,11 @@
 - title: Learn
   links:
     - title: Documentation
-      href: "#"
+      href: "/documentation"
     - title: Tutorials
-      href: "#"
+      href: "/documentation"
     - title: Workshops
-      href: "#"
+      href: "/events"
 - title: Software
   links:
     - title: Issue Tracker
