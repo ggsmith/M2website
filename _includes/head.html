@@ -170,12 +170,6 @@
     type="text/css"
   />
   <script src="{{ site.baseurl }}/static/prism-macaulay2.js"></script>
-  <style>
-    :root:not(.dark) pre[class*="language-"],
-    :root:not(.dark) code[class*="language-"] {
-      background-color: #d8ffff !important;
-    }
-  </style>
 
   <!-- Handlebars -->
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -202,4 +196,36 @@
   ></script>
   <!-- End Cloudflare Web Analytics -->
   {%- endif %}
+
+  <style>
+    :root:not(.dark) pre[class*="language-"],
+    :root:not(.dark) code[class*="language-"] {
+      background-color: #d8ffff !important;
+    }
+    :not(pre) > code,
+    :not(pre) > code[class*="language-"] {
+      display: inline !important;
+      background: var(--card) !important;
+      padding-right: 4px !important;
+      padding-left: 4px !important;
+      padding-top: 2px !important;
+      padding-bottom: 2px !important;
+      border-radius: 6px !important;
+    }
+
+    code,
+    code *,
+    pre,
+    pre * {
+      font-family:
+        Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
+    }
+
+    code,
+    code * {
+      white-space: pre-wrap !important;
+      overflow-wrap: anywhere !important;
+      word-break: break-word !important;
+    }
+  </style>
 </head>
