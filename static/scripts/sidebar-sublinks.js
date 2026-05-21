@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", (e) => {
       const clickedOnTheLink = e.target.closest("a");
       if (clickedOnTheLink) return;
-      const sublinkList = document.querySelector("#sublink-list");
+      const sublinkList = link.querySelector("#sublink-list");
       if (!sublinkList) {
         console.error("No sublink content in link in sidebar.");
         return;
