@@ -25,9 +25,11 @@
       assign is_current_page = true %} {% endif %} {% assign has_sublinks =
       node.sublinks.size > 0 %}
       <div>
-        <div class="flex flex-col gap-1">
+        <div
+          class="flex flex-col gap-1 {% if has_sublinks %}cursor-pointer sidebar-link-with-sublinks{% endif %}"
+        >
           <div
-            class="flex items-center w-full {% if has_sublinks %}cursor-pointer sidebar-link-with-sublinks{% endif %} gap-2 justify-between rounded transition-all duration-200 hover:bg-app-surface-muted {% if is_current_page %}bg-app-surface-muted{% endif %}"
+            class="flex items-center w-full gap-2 justify-between rounded transition-all duration-200 hover:bg-app-surface-muted {% if is_current_page %}bg-app-surface-muted{% endif %}"
             {%
             if
             is_current_page
@@ -54,35 +56,28 @@
             id="sublink-list"
             class="hidden border-l pl-4 m-2 flex flex-col gap-1"
           >
-            {% for sublink in node.sublinks %}
-            {% if sublink.href contains "://" or sublink.href contains "mailto:" %}
-            {% assign sublink_url = sublink.href %}
-            {% assign is_external_sublink = true %}
-            {% else %}
-            {% assign sublink_url = site.baseurl | append: sublink.href %}
-            {% assign is_external_sublink = false %}
-            {% endif %}
-            <div
-              class="rounded px-2 py-1 transition-all duration-200 hover:bg-app-surface-muted"
+            {% for sublink in node.sublinks %} {% if sublink.href contains "://"
+            or sublink.href contains "mailto:" %} {% assign sublink_url =
+            sublink.href %} {% assign is_external_sublink = true %} {% else %}
+            {% assign sublink_url = site.baseurl | append: sublink.href %} {%
+            assign is_external_sublink = false %} {% endif %}
+            <a
+              href="{{ sublink_url }}"
+              class="w-full rounded px-2 py-1 transition-all duration-200 hover:bg-app-surface-muted"
               {%
               if
-              is_current_page
-              %}aria-current="page"
+              is_external_sublink
+              %}target="_blank"
+              rel="noopener noreferrer"
               {%
               endif
               %}
             >
-              <a
-                href="{{ sublink_url }}"
-                class="w-full"
-                {% if is_external_sublink %}target="_blank" rel="noopener noreferrer"{% endif %}
-              >
-                <span
-                  class="text-lg w-full hover:underline truncate !text-foreground"
-                  >{{ sublink.title }}</span
-                ></a
-              >
-            </div>
+              <span
+                class="text-lg w-full hover:underline truncate !text-foreground"
+                >{{ sublink.title }}</span
+              ></a
+            >
             {% endfor %}
           </div>
 
@@ -96,6 +91,13 @@
           href="https://github.com/Macaulay2/M2/wiki"
           target="_blank"
           >For Developers</a
+        >
+      </li>
+      <li>
+        <a
+          class="block !text-foreground rounded hover:underline px-2 py-1 text-lg text-app-text transition-all duration-200 hover:bg-app-surface-muted"
+          href="/updates"
+          >Updates</a
         >
       </li>
     </ul>
