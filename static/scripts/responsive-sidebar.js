@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sidebarHiddenSheet = document.querySelector("#sidebar-hidden-sheet");
   const sidebarButton = document.querySelector("#sidebar-toggle-button");
-  const sidebarElement = document.querySelector("#responsive-sidebar");
+  const responsiveSidebar = document.querySelector("#responsive-sidebar");
+  const logoLetters = responsiveSidebar.querySelector("#logo-letters");
+  const logoText = responsiveSidebar.querySelector("#logo-text");
   const desktopQuery = window.matchMedia("(min-width: 768px)");
 
   const showSheet = () => {
@@ -14,45 +16,60 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarHiddenSheet.classList.add("opacity-0", "pointer-events-none");
   };
 
+  const adjustLettersDown = () => {
+    logoLetters.classList.add("!text-2xl");
+    logoText.classList.add("!text-3xl");
+  };
+
+  const adjustLettersUp = () => {
+    logoLetters.classList.remove("!text-2xl");
+    logoText.classList.remove("!text-3xl");
+  };
+
   const openSidebar = () => {
-    sidebarElement.classList.remove(
+    responsiveSidebar.classList.remove(
       "sidebar-collapsed-desktop",
       "sidebar-collapsed-mobile",
     );
-    sidebarElement.classList.add(
+    responsiveSidebar.classList.add(
       desktopQuery.matches ? "sidebar-open-desktop" : "sidebar-open-mobile",
     );
 
-    if (!desktopQuery.matches) showSheet();
+    if (!desktopQuery.matches) {
+      adjustLettersDown();
+      showSheet();
+    }
   };
 
   const closeSidebar = () => {
-    sidebarElement.classList.remove(
+    responsiveSidebar.classList.remove(
       "sidebar-open-desktop",
       "sidebar-open-mobile",
     );
-    sidebarElement.classList.add(
+    responsiveSidebar.classList.add(
       desktopQuery.matches
         ? "sidebar-collapsed-desktop"
         : "sidebar-collapsed-mobile",
     );
 
+    adjustLettersUp();
     hideSheet();
   };
 
   const sidebarIsClosed = () =>
-    sidebarElement.classList.contains("sidebar-collapsed-desktop") ||
-    sidebarElement.classList.contains("sidebar-collapsed-mobile");
+    responsiveSidebar.classList.contains("sidebar-collapsed-desktop") ||
+    responsiveSidebar.classList.contains("sidebar-collapsed-mobile");
 
   const syncSidebarToBreakpoint = () => {
+    adjustLettersUp();
     hideSheet();
-    sidebarElement.classList.remove(
+    responsiveSidebar.classList.remove(
       "sidebar-collapsed-desktop",
       "sidebar-collapsed-mobile",
       "sidebar-open-desktop",
       "sidebar-open-mobile",
     );
-    sidebarElement.classList.add(
+    responsiveSidebar.classList.add(
       desktopQuery.matches
         ? "sidebar-open-desktop"
         : "sidebar-collapsed-mobile",

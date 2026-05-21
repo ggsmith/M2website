@@ -24,6 +24,7 @@
 #responsive-sidebar.sidebar-open-mobile {
   translate: 0 0;
   transform: translateX(0);
+  width: 15rem;
 }
 
 /******************************************************************************/
